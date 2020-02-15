@@ -8,11 +8,13 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Paint;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -49,7 +51,7 @@ public class Clock extends AppCompatActivity {
 
 
     ProgressDialog progressDialog;
-    TextView positionName, clientName, wageAmount, wageType, locationStreet, locationManager, managerPhone, timeIn, timeOut,cloking;
+    TextView positionName, clientName, wageAmount, wageType, locationStreet, locationManager, managerPhone, timeIn, timeOut, cloking;
     TextView cancel;
     ImageView clock;
     ConstraintLayout overlay;
@@ -93,15 +95,24 @@ public class Clock extends AppCompatActivity {
         managerPhone.setPaintFlags(managerPhone.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         cancel.setPaintFlags(cancel.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
-        prefManager = new PrefManager("Clock",Clock.this);
+        prefManager = new PrefManager("Clock", Clock.this);
         sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
 
 
         getToken();
 
+        managerPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String phone_no = managerPhone.getText().toString();
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:" + phone_no));
+                startActivity(callIntent);
+            }
+        });
 
-        Log.d("tes","clock in "+prefManager.isClockin()+" clock out "+prefManager.isClockOut());
+
 
         if (prefManager.isClockin())
         {
@@ -186,7 +197,6 @@ public class Clock extends AppCompatActivity {
         loading.setProgress(progressStatus);
         stop = false;
 
-        Log.d("tes","in :"+prefManager.isClockin());
         new Thread(new Runnable() {
             public void run() {
 
@@ -195,7 +205,6 @@ public class Clock extends AppCompatActivity {
                     handler.post(new Runnable() {
                         public void run() {
                             loading.setProgress(progressStatus);
-                            Log.d("tes", "progress" + progressStatus);
                             if (progressStatus == max) {
                                 clock.setEnabled(true);
                                 if (prefManager.isClockin())
@@ -284,8 +293,6 @@ public class Clock extends AppCompatActivity {
                         String tempIn = new SimpleDateFormat("hh:mma").format(d);
                         timeIn.setText(tempIn);
                         prefManager.setTime_In(tempIn);
-
-
                     } catch (ParseException ex) {
                         Log.v("Exception", ex.getLocalizedMessage());
                     }
@@ -340,7 +347,7 @@ public class Clock extends AppCompatActivity {
     private void getData() {
         mApiService = RetrofitClient.getClient().create(APIInterface.class);
 
-        Log.d("tes","token "+token);
+
         mApiService.getData("token "+token).enqueue(new Callback<Staff>() {
             @Override
             public void onResponse(Call<Staff> call, Response<Staff> response) {
@@ -364,7 +371,6 @@ public class Clock extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Staff> call, Throwable t) {
-                Log.d("data","response : "+t.getMessage());
                 progressDialog.dismiss();
             }
         });
