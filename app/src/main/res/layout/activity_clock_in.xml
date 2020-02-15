@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Main_Background"
+    tools:context=".activity.Clock">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Main_Background"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/group_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/group_2"
+        app:layout_constraintStart_toStartOf="@+id/group_2"
+        app:layout_constraintTop_toBottomOf="@+id/group_2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/clock_in"
+                    android:layout_width="0dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="top"
+                    android:lineSpacingExtra="10sp"
+                    android:text="@string/clock_in"
+                    android:textAppearance="@style/clock_in"
+                    app:fontFamily="@font/helvetica_neue_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/time_in"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="0sp"
+                    android:text="@string/time_in"
+                    android:textAppearance="@style/time_in"
+
+                    android:textStyle="bold"
+                    app:fontFamily="@font/helvetica_neue_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clock_in" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/clock_out"
+                    android:layout_width="0dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="top"
+                    android:lineSpacingExtra="10sp"
+                    android:text="@string/clock_out"
+                    android:textAppearance="@style/clock_out"
+                    app:fontFamily="@font/helvetica_neue_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/time_out"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="top"
+                    android:lineSpacingExtra="0sp"
+                    android:text="@string/time_out"
+                    android:textAppearance="@style/time_out"
+
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clock_out" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/group_2"
+        android:layout_width="321dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/Position_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:gravity="top"
+            android:lineSpacingExtra="9sp"
+            android:text="@string/h1"
+            android:textAppearance="@style/h1"
+            android:textStyle="bold"
+            app:fontFamily="@font/helvetica_neue_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lineHeight="36sp" />
+
+        <TextView
+            android:id="@+id/Client_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="30dp"
+            android:gravity="top"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/kaizen_coff"
+            android:textAppearance="@style/kaizen_coff"
+            android:textStyle="bold"
+            app:fontFamily="@font/helvetica_neue_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/Position_Name" />
+
+
+        <TextView
+            android:id="@+id/Wage_Amount"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="6dp"
+            android:gravity="right|top"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/rp_120_000"
+            android:textAppearance="@style/rp_120_000"
+            android:textStyle="bold"
+            app:fontFamily="@font/helvetica_neue_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Wage_Type"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="25dp"
+            android:gravity="right|top"
+            android:lineSpacingExtra="9sp"
+            android:text="@string/per_day"
+            android:textAppearance="@style/per_day"
+            android:textStyle="bold"
+            app:fontFamily="@font/helvetica_neue_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/Wage_Amount" />
+
+        <TextView
+            android:id="@+id/Location_Street"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="6dp"
+            android:gravity="top"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/km_away_888"
+            android:textAppearance="@style/km_away_888"
+            app:fontFamily="@font/helvetica_neue_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Client_Name" />
+
+        <TextView
+            android:id="@+id/location_ma"
+            android:layout_width="0dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="12dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/location_ma"
+            android:textAppearance="@style/location_ma"
+            app:fontFamily="@font/helvetica_neue_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Location_Street" />
+
+        <TextView
+            android:id="@+id/Location_Manager"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginRight="68dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/yai_thong_o"
+            android:textAppearance="@style/yai_thong_o"
+            app:fontFamily="@font/helvetica_neue_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/location_ma"
+            app:layout_constraintTop_toBottomOf="@+id/Location_Street" />
+
+        <TextView
+            android:id="@+id/contact_num"
+            android:layout_width="0dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="12dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/contact_num"
+            android:textAppearance="@style/contact_num"
+            app:fontFamily="@font/helvetica_neue_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location_ma" />
+
+        <TextView
+            android:id="@+id/manager_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="53dp"
+            android:layout_marginLeft="53dp"
+            android:layout_marginTop="12dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/contact_number"
+            android:textAppearance="@style/contact_number"
+            app:fontFamily="@font/helvetica_neue_normal"
+            app:layout_constraintStart_toEndOf="@+id/contact_num"
+            app:layout_constraintTop_toBottomOf="@+id/Location_Manager" />
+
+        <ImageView
+            android:id="@+id/ic_location"
+            android:layout_width="9.75dp"
+            android:layout_height="13dp"
+
+            android:layout_marginTop="11.81dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Client_Name"
+            app:srcCompat="@drawable/ic_location" />
+
+        <ImageView
+            android:id="@+id/ic_person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintBottom_toBottomOf="@+id/location_ma"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/location_ma"
+            app:srcCompat="@drawable/ic_person" />
+
+        <ImageView
+            android:id="@+id/ic_person2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintBottom_toBottomOf="@+id/contact_num"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/contact_num"
+            app:srcCompat="@drawable/ic_contact" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/btn_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_3"
+        app:srcCompat="@drawable/ic_button_in" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/overlayIn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/Cancel_Background"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/clocking"
+            android:layout_width="196dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/clocking"
+            android:textAppearance="@style/clocking"
+            android:translationY="-2.84sp"
+
+            app:layout_constraintBottom_toTopOf="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="50dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/cancel"
+            android:textAppearance="@style/cancel"
+            android:translationY="-2.84sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/ProgressBarPrimary"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="59dp"
+            android:layout_marginLeft="59dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginRight="56dp"
+            android:indeterminate="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

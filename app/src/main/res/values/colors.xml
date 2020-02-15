@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Main_Background">#FFFFFF</color>
+    <color name="Cancel_Background">#F5404040</color>
+    <color name="Progres">#C4C4C4</color>
+</resources>

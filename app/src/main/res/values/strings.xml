@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Take Home Exercise</string>
+
+    <!-- Clock in -->
+    <string name="h1">Barista</string>
+    <string name="kaizen_coff">Kaizen Coffee Co.</string>
+    <string name="rp_120_000">Rp 120,000</string>
+
+
+    <string name="clocking">Clocking in…</string>
+    <string name="clockingOut">Clocking Out…</string>
+    <string name="cancel">Cancel</string>
+    <string name="per_day">per day</string>
+    <string name="km_away_888">888 6–7 Ekkamai Rd, Khlong Tan Nuea, Watthana, Bangkok 10110, Thailand</string>
+    <string name="location_ma">Location Manager</string>
+    <string name="yai_thong_o">Yai Thong-oon</string>
+    <string name="contact_num">Contact Number</string>
+    <string name="contact_number">+66–955–5695–65</string>
+    <string name="clock_in">Clock In</string>
+    <string name="clock_out">Clock Out</string>
+    <string name="time_in">-</string>
+    <string name="time_out">-</string>
+
+
+</resources>
